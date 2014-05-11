@@ -12,7 +12,16 @@ schema.js
     var data = [{ id : 1, title : 'title1' }, { id : 2, title : 'title2' }];
     var sch = { ID : 'id', TITLE : 'title' };
     var r = schema.convert(data, sch);
-    // r = [{ID:1,TITLE:'title1'},{ID:2,TITLE:'title2'}]
+    /* r = [
+    	{
+    		ID:1,
+    		TITLE:'title1'
+    	},
+    	{
+    		ID:2,
+    		TITLE:'title2'
+    	}
+    ] */ 
     
 可以通过一个多层的对照架构，将一个单层数据转换为复杂的多层数据。
 
@@ -27,7 +36,15 @@ schema.js
     	}
     }
     var r = schema.convert(data, sch);
-    r = {sub_title:'subtitle1',level1:{title:'title1',level2:{id:1}}} 
+    /* r = {
+    	sub_title:'subtitle1',
+    	level1:{
+    		title:'title1',
+    		level2:{
+    			id:1
+    		}
+    	}
+    } */ 
 
 ### 函数模板
 
@@ -59,5 +76,14 @@ schema.js
     	}
     };
     var r = schema.convert(data, sch);
-    // r = [{ID:1,TITLE:'title1-subtitle1'},{ID:2,TITLE:'title2-subtitle2'}] 
+    /* r = [
+    	{
+    		ID:1,
+    		TITLE:'title1-subtitle1'
+    	},
+    	{
+    		ID:2,
+    		TITLE:'title2-subtitle2'
+    	}
+    ] */ 
 
