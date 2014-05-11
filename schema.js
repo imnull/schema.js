@@ -1,3 +1,14 @@
+/*
+ * Apache License Version 2.0
+ * schema.js
+ * version 1.1
+ * 
+ * by MK
+ * email: mk31415926535@gmail.com
+ * blog: mkjs.net
+ *
+ * */
+
 (function(w){
 	/*
 	 * 类型判断
