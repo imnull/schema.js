@@ -3,6 +3,8 @@ schema.js
 
 转换JSON数据结构。
 
+BLOG:[http://mkjs.net/?cat=8](http://mkjs.net/?cat=8)
+
 该模块最初是[template.js](https://github.com/imnull/template.js)的一部分，负责对来自后端的原始JSON数据进行标准化。在template.js的设计过程中，为了提高模板的可复用性，面临的最大问题就是：如何适配结构不同的JSON数据。Schema.js所做的，就是在一个架构模板的指导下，将后端数据转换为模板所使用的数据架构，实现一套模板多处使用。
 
 ### 使用键对照表转换
