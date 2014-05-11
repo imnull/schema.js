@@ -5,7 +5,7 @@ schema.js
 
 该模块最初是[template.js](https://github.com/imnull/template.js)的一部分，负责对来自后端的原始JSON数据进行标准化。在template.js的设计过程中，为了提高模板的可复用性，面临的最大问题就是：如何适配结构不同的JSON数据。Schema.js所做的，就是在一个架构模板的指导下，将后端数据转换为模板所使用的数据架构，实现一套模板多处使用。而剩下的工作，就是如何对架构模板进行管理了。
 
-### 键对照表
+### 使用键对照表转换
 
 键对照表通过一个简单的对照字典，重组原始数据。
 
@@ -46,14 +46,14 @@ schema.js
     	}
     } */ 
 
-### 函数模板
+### 使用函数转换
 
     var data = { id : 1 };
     var sch = function(d){ return d.id; }
     var r = schema.convert(data, sch);
     // r = 1
     
-### 架构模板
+### 使用架构模板转换
 
 架构模板本身是个JS对象，有两个必须的键：key和schema。key负责从原始数据中提取值，形成新的数据传递给schema，schema通过各种类型设定，将这些值转为最终结果。
 
