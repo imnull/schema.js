@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+textarea{
+	width:800px;
+	height: 200px;
+}
+h3{
+	margin:0px;
+}
+
+</style>
+<script type="text/javascript" src="schema.js"></script>
+</head>
+
+<body>
+
+<h3>Raw Data</h3>
+<textarea></textarea>
+
+<h3>Schema</h3>
+<textarea></textarea>
+
+<h3>Final Data</h3>
+<textarea></textarea>
+
+<script type="text/javascript">
+
+var ts = document.getElementsByTagName('textarea');
+
+var data = [
+	{ id : 2, title : 'abc2', sub : { title : 'subtitle2' } },
+	{ id : 3, title : 'abc3', sub : { title : 'subtitle3' } },
+	{ id : 4, title : 'abc4', sub : { title : 'subtitle4' } },
+	{ id : 5, title : 'abc5', sub : { title : 'subtitle5' } }
+];
+
+var s = {
+	ID : 'id'
+	, TITLE : {
+		key : ['title', 'sub.title'],
+		schema : function(args, index){
+			return args.join('::');
+		}
+	}
+	, ID2 : function(data){
+		return -data.id;
+	}
+	, ID3 : {
+		subid : {
+			id : 'sub.title'
+		}
+	}
+}
+
+var r = schema.convert(data, s);
+
+ts[0].value = schema.obj2str(data);
+ts[1].value = schema.obj2str(s);
+ts[2].value = schema.obj2str(r);
+
+</script>
+
+</body>
+</html>
