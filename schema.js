@@ -55,7 +55,7 @@
 
 	/*
 	 * 数组的every函数
-	 * */
+	 * */i
 	function EVERY(a, m){
 		var i = 0, len = a.length;
 		while(i < len){
@@ -94,7 +94,7 @@
 			var d;
 			if(isArray(schema.key)){
 				d = [];
-				each(schema.key, function(k){
+				EACH(schema.key, function(k){
 					d.push(domain(k, data));
 				});
 			} else if(isObject(schema.key)) {
